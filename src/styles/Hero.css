@@ -12,12 +12,14 @@
 }
 
 .hero-title {
+  color: #222222;
   font-size: 36px;
   line-height: 1;
   margin-bottom: 20px;
 }
 
 .hero-description {
+  color: #222222;
   font-weight: 300px;
   max-width: 340px;
 }
