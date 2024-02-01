@@ -2,9 +2,27 @@ import "../styles/Card.css";
 import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa";
 
-const Card = ({ img, imgAlt, rating, reviewCount, location, title, price }) => {
+const Card = ({
+  img,
+  imgAlt,
+  rating,
+  reviewCount,
+  location,
+  title,
+  price,
+  openSpots,
+}) => {
+  let badgeText;
+
+  if (openSpots === 0) {
+    badgeText = "SOLD OUT";
+  } else if (location === "Online") {
+    badgeText = "ONLINE";
+  }
+
   return (
     <article className="card">
+      {badgeText && <div className="card-badge">{badgeText}</div>}
       <img
         src={`../../public/assets/${img}`}
         alt={imgAlt}
@@ -35,6 +53,7 @@ Card.propTypes = {
   location: PropTypes.string,
   title: PropTypes.string,
   price: PropTypes.number,
+  openSpots: PropTypes.number,
 };
 
 export default Card;
