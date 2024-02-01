@@ -2,16 +2,8 @@ import "../styles/Card.css";
 import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa";
 
-const Card = ({
-  img,
-  imgAlt,
-  rating,
-  reviewCount,
-  location,
-  title,
-  price,
-  openSpots,
-}) => {
+const Card = ({ item }) => {
+  const { coverImg, stats, location, title, price, openSpots } = item;
   let badgeText;
 
   if (openSpots === 0) {
@@ -24,15 +16,16 @@ const Card = ({
     <article className="card">
       {badgeText && <div className="card-badge">{badgeText}</div>}
       <img
-        src={`../../public/assets/${img}`}
-        alt={imgAlt}
+        src={`../../public/assets/${coverImg}`}
+        alt=""
         className="card-image"
       />
       <div className="card-text-container">
         <div className="card-ranking">
           <FaStar className="card-star" />
           <p>
-            {rating} <span className="card-reviews">({reviewCount}) </span>
+            {stats.rating}{" "}
+            <span className="card-reviews">({stats.reviewCount}) </span>
             <span className="card-location">{location}</span>
           </p>
         </div>
@@ -46,14 +39,7 @@ const Card = ({
 };
 
 Card.propTypes = {
-  img: PropTypes.string,
-  imgAlt: PropTypes.string,
-  rating: PropTypes.string,
-  reviewCount: PropTypes.number,
-  location: PropTypes.string,
-  title: PropTypes.string,
-  price: PropTypes.number,
-  openSpots: PropTypes.number,
+  item: PropTypes.object,
 };
 
 export default Card;

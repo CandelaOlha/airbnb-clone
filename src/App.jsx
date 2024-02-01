@@ -11,16 +11,7 @@ const App = () => {
       <Hero />
       <section className="cards-container">
         {data.map((item) => (
-          <Card
-            key={item.id}
-            img={item.coverImg}
-            rating={item.stats.rating}
-            reviewCount={item.stats.reviewCount}
-            location={item.location}
-            title={item.title}
-            price={item.price}
-            openSpots={item.openSpots}
-          />
+          <Card key={item.id} item={item} />
         ))}
       </section>
     </>
