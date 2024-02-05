@@ -4,7 +4,7 @@
 
 This project is part of the [Scrimba](https://scrimba.com/) React course, which I am taking to refresh my knowledge in React.
 
-It consisted of creating a clone of the main Airbnb homepage, in which different experiences are rendered that we as users can enjoy.
+It consisted of creating a clone of the Airbnb homepage, in which different experiences are rendered that we as users can enjoy.
 
 In this project I have applied basic React concepts, such as creating components, using props, conditional rendering and using the map() method to render the same component for each element of an array.
 
